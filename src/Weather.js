@@ -147,12 +147,16 @@ export default function Weather() {
           <div className="col-4">Condition</div>
         </div>
       </div>
-      <div class="reference">
-        <a href="https://github.com/paulinagonzalezc/weather-react-app">
+      <footer class="reference">
+        <a
+          href="https://github.com/paulinagonzalezc/weather-react-app"
+          target="_blank"
+          rel="noreferrer"
+        >
           Open-source code
         </a>
         <span> by Paulina Gonzalez</span>
-      </div>
+      </footer>
     </div>
   );
 }

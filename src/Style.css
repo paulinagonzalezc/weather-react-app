@@ -100,3 +100,8 @@ body {
   color: gray;
   margin: 0px 0px 15px 0px;
 }
+
+.reference {
+  text-align: center;
+  font-size: 13px;
+}
