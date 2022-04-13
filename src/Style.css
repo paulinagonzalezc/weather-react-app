@@ -1,0 +1,102 @@
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+body {
+  background: #eeee;
+}
+
+.container {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-style: bold;
+  width: 650px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px auto;
+  background-size: cover;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.02), 0 8px 6px rgba(0, 0, 0, 0.03),
+    0 16px 10px rgba(0, 0, 0, 0.04), 0 26px 18px rgba(0, 0, 0, 0.05),
+    0 48px 34px rgba(0, 0, 0, 0.06);
+}
+
+.Weather .bars {
+  text-align: left;
+  font-size: 30px;
+}
+.Weather .search {
+  padding: 0px 12px;
+  background: none;
+  border: 0px;
+  font-size: 20px;
+}
+.Weather .form-control {
+  font-size: 13px;
+  border-radius: 6px;
+}
+.Weather .location {
+  font-size: 13px;
+}
+.Weather .date {
+  margin: 0px;
+  color: gray;
+  font-size: 13px;
+}
+.Weather .icon {
+  max-width: 120px;
+}
+.Weather .temperature {
+  font-size: 70px;
+  text-align: center;
+}
+
+.Weather .symbol {
+  font-size: 30px;
+  position: relative;
+  line-height: 1;
+  top: -20px;
+}
+.Weather .wind-col,
+.drop-col {
+  padding-right: 0px;
+}
+
+.Weather .drops,
+.wind {
+  padding-right: 0px;
+  max-width: 80px;
+  left: 100px;
+}
+.Weather .humid,
+.vel {
+  padding-left: 0px;
+}
+.Weather .km {
+  font-size: 13px;
+}
+.Weather .scale .active {
+  color: gray;
+  cursor: default;
+}
+
+.Weather .scale .active:hover {
+  text-decoration: none;
+}
+.Weather .weather-labels {
+  font-size: 12px;
+  color: gray;
+  margin: 0px 0px 15px 0px;
+}
+.Weather .pressure,
+.min,
+.max,
+.humidity {
+  padding: 8px;
+  font-size: 14px;
+}
+.Weather .weather-tags {
+  font-size: 12px;
+  color: gray;
+  margin: 0px 0px 15px 0px;
+}
