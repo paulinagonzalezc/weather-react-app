@@ -21,7 +21,6 @@
   background: none;
   border: 0px;
   font-size: 20px;
-  color: white;
 }
 .Weather .form-control {
   font-size: 13px;
@@ -82,8 +81,8 @@
 }
 .Weather .pressure,
 .min,
-.maxim,
-.humidity {
+.max,
+.condition {
   padding: 8px;
   font-size: 14px;
 }
