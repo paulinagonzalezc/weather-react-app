@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import background from "./sky.png";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     console.log(response);
     setWeatherData({
@@ -22,6 +22,20 @@ export default function Weather() {
       condition: response.data.weather[0].description,
     });
   }
+  function search() {
+    const apiKey = "91ddd16622a3322fcdf9394f7672a655";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function hanldeCityChange(event) {
+    setCity(event.target.value);
+  }
 
   if (weatherData.ready) {
     return (
@@ -33,7 +47,7 @@ export default function Weather() {
           <div className="row">
             <i type="button" className="col-8 fas fa-bars bars"></i>
 
-            <form className="col-4 form-inline">
+            <form className="col-4 form-inline" onSubmit={handleSubmit}>
               <div className="input-group">
                 <input
                   className="form-control"
@@ -41,6 +55,7 @@ export default function Weather() {
                   placeholder="Search city..."
                   autoComplete="off"
                   autoFocus="on"
+                  onChange={hanldeCityChange}
                 />
                 <button type="submit" className="btn btn-light search">
                   🔍
@@ -59,114 +74,11 @@ export default function Weather() {
             </button>
           </div>
         </div>
-        <div className="City">
-          <h1>{weatherData.city}</h1>
-        </div>
-        <div className="date">
-          <FormattedDate date={weatherData.date} />
-        </div>
-        <div className="Icon">
-          <img
-            src={require("./11d.png")}
-            alt={weatherData.condition}
-            className="icon"
-          />
-        </div>
-
-        <div className="row">
-          <div className="col-4"></div>
-          <div className="col-4">
-            <span className="temperature">
-              {Math.round(weatherData.temperature)}
-            </span>
-            <span className="symbol">º</span>
-          </div>
-          <div className="col-4"></div>
-        </div>
-        <div className="row">
-          <div className="col-2 drop-col">
-            <img
-              src={require("./droplet.png")}
-              className="drops"
-              alt="drops"
-              width="35%"
-            />
-          </div>
-          <div className="col-2 humid">
-            <span>{weatherData.humidity}</span>%
-          </div>
-          <div className="col-4"></div>
-          <div className="col-2 wind-col">
-            <img
-              src={require("./wind.png")}
-              className="wind"
-              alt="wind"
-              width="50%"
-            />
-          </div>
-          <div className="col-2 vel">
-            <span>{Math.round(weatherData.wind)}</span>
-            <span className="km"> km/hr</span>
-          </div>
-        </div>
-        <div className="row weather-labels">
-          <div className="col-4">Humidity</div>
-          <div className="col-4 scale">
-            <span>
-              <a href="/" className="active">
-                ºC
-              </a>
-            </span>{" "}
-            |
-            <span>
-              <a href="/">ºF</a>
-            </span>
-          </div>
-          <div className="col-4">Wind</div>
-        </div>
-        <div className="row weather-details">
-          <div className="col-4">
-            <div className="card bg-light border-light rounded-pill">
-              <div className="card-body pressure">{weatherData.pressure}</div>
-            </div>
-          </div>
-          <div className="col-2">
-            <div className="card bg-light border-light rounded-pill">
-              <div className="card-body max">
-                <span>{Math.round(weatherData.max)}</span>º
-              </div>
-            </div>
-          </div>
-          <div className="col-2">
-            <div className="card bg-light border-light rounded-pill">
-              <div className="card-body min">
-                <span>{Math.round(weatherData.min)}</span>º
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="card bg-light border-light rounded-pill">
-              <div className="card-body text-capitalize condition">
-                {weatherData.condition}
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row weather-tags">
-          <div className="col-4">Pressure</div>
-          <div className="col-2">Max</div>
-          <div className="col-2">Min</div>
-          <div className="col-4">Condition</div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    const apiKey = "91ddd16622a3322fcdf9394f7672a655";
-
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
