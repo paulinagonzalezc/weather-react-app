@@ -29,6 +29,10 @@
 .Weather .location {
   font-size: 13px;
 }
+
+.Weather h1 {
+  font-size: 45px;
+}
 .Weather .date {
   margin: 0px;
   color: gray;
@@ -40,13 +44,16 @@
 .Weather .temperature {
   font-size: 70px;
   text-align: center;
+  height: 100%;
+  position: relative;
+  top: -15px;
 }
 
 .Weather .symbol {
   font-size: 30px;
   position: relative;
   line-height: 1;
-  top: -20px;
+  top: -35px;
 }
 .Weather .wind-col,
 .drop-col {
@@ -71,7 +78,10 @@
   cursor: default;
 }
 
-.Weather .scale .active:hover {
+.Weather .units {
+  font-size: 12px;
+}
+.Weather .active:hover {
   text-decoration: none;
 }
 .Weather .weather-labels {
