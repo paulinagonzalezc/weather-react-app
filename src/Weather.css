@@ -18,13 +18,13 @@
 }
 .Weather .search {
   padding: 0px 12px;
-  background: none;
   border: 0px;
-  font-size: 20px;
+  font-size: 15px;
 }
 .Weather .form-control {
-  font-size: 13px;
+  font-size: 11px;
   border-radius: 6px;
+  border: 0px;
 }
 .Weather .location {
   font-size: 13px;
@@ -84,7 +84,7 @@
 .max,
 .condition {
   padding: 8px;
-  font-size: 14px;
+  font-size: 13px;
 }
 .Weather .weather-tags {
   font-size: 12px;

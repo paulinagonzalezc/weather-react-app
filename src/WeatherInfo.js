@@ -11,7 +11,7 @@ export default function WeatherInfo(props) {
       </div>
       <div className="Icon">
         <img
-          src={require("./11d.png")}
+          src={require(`./images/${props.data.icon}.png`)}
           alt={props.data.condition}
           className="icon"
         />
