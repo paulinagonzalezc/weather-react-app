@@ -1,0 +1,26 @@
+.forecastCard {
+  background-color: white;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.02), 0 8px 6px rgba(0, 0, 0, 0.03),
+    0 16px 10px rgba(0, 0, 0, 0.04), 0 26px 18px rgba(0, 0, 0, 0.05),
+    0 48px 34px rgba(0, 0, 0, 0.06);
+  border: 0px solid;
+}
+.iconForecast {
+  padding: 3px;
+}
+.card-body {
+  padding: 10px;
+}
+.fore-min {
+  opacity: 0.5;
+  font-size: 15px;
+}
+
+.fore-max {
+  font-size: 15px;
+}
+
+.weatherForecast-day {
+  font-size: 13px;
+  color: gray;
+}
