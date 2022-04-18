@@ -32,6 +32,7 @@
 
 .Weather h1 {
   font-size: 45px;
+  margin-top: 15px;
 }
 .Weather .date {
   margin: 0px;

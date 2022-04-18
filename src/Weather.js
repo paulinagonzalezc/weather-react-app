@@ -66,17 +66,6 @@ export default function Weather(props) {
             </form>
           </div>
         </div>
-
-        <div className="Location">
-          <div className="row">
-            <div className="col-8"></div>
-            <button type="button" className="col-4 btn btn-link location">
-              <span role="img" aria-label="label">
-                Location📍
-              </span>
-            </button>
-          </div>
-        </div>
         <WeatherInfo data={weatherData} />
         <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
