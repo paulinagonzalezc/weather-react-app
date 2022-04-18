@@ -66,6 +66,7 @@ export default function Weather(props) {
             </form>
           </div>
         </div>
+
         <div className="Location">
           <div className="row">
             <div className="col-8"></div>
